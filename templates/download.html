@@ -1,0 +1,28 @@
+<!-- {% for document in object_list %}
+
+<a href="{{ document.csv_file.url }}" download  class="btn btn-dark float-right">Download</a>
+
+{% endfor %}
+
+-->
+<style>
+    .fixed-footer{
+      width: 100%;
+      position: fixed;
+      background: rgb(12, 85, 153);
+      padding: 10px 0;
+      color: #fff;
+  }
+  .fixed-footer{
+      bottom: 0;
+  }    
+</style>
+
+<form action="downloadExcel" method="POST">
+    {% csrf_token %}  
+    <input type="submit" id="pullExcel" value="Get report" onclick=""/>
+</form>
+
+<div class="fixed-footer">
+    <div class="container">Copyright &copy; under development</div>        
+  </div>

@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+
+<html lang="en-us" >
+<head>
+<title>Log in | AppMod Report site</title>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/login.css">
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+    
+
+<meta name="robots" content="NONE,NOARCHIVE">
+<style>
+  .fixed-footer{
+    width: 100%;
+    position: fixed;
+    background: rgb(12, 85, 153);
+    padding: 10px 0;
+    color: #fff;
+}
+.fixed-footer{
+    bottom: 0;
+}    
+/* Some more styles to beutify this example */
+.container p{
+    line-height: 200px; /* Create scrollbar to test positioning */
+}
+
+</style>
+</head>
+
+
+
+<body class=" login"
+  data-admin-utc-offset="0">
+
+  
+<!-- Container -->
+
+<div style="width:100%;position:relative;top:0;bottom:0"  id="mohamlineContent">
+<style id="mohaml-mesh-styles">
+    
+  #mohamlineContent {
+      height: auto;
+      width: 100%;
+      position: relative;
+  }
+  
+  #mohamlineContent-gridWrapper {
+      pointer-events: none;
+  }
+  
+  #mohamlineContent-gridContainer {
+      position: static;
+      display: grid;
+      height: auto;
+      width: 100%;
+      min-height: auto;
+      grid-template-rows: 1fr;
+      grid-template-columns: 100%;
+  }
+  
+  #comp-k8hdwnco {
+      position: relative;
+      margin: 17px 0px 17px calc((100% - 980px) * 0.5);
+      left: 220px;
+      grid-area: 1 / 1 / 2 / 2;
+      justify-self: start;
+      align-self: start;
+  }
+  
+  #comp-ka2is7cacenteredContent {
+      position: relative;
+  }
+  
+  #mohamlineContent-gridContainer > * {
+      pointer-events: auto;
+  }
+  
+  #mohamlineContent-gridContainer > [id$="-rotated-wrapper"] {
+      pointer-events: none;
+  }
+  
+  #mohamlineContent-gridContainer > [id$="-rotated-wrapper"] > * {
+      pointer-events: auto;
+  }</style>
+<div id="mohamlineContent-gridWrapper" data-mesh-internal="true">
+	<div id="mohamlineContent-gridContainer" data-mesh-internal="true">
+		<div data-packed="false" style="width: 534px; min-height: 13px; pointer-events: none;" data-min-height="13" class="txtNew" id="comp-k8hdwnco">
+			<h1 class="font_3" style="font-size:34px; text-align:center;">
+				<span style="font-size:34px;">Application Modernization portal</span>
+			</h1>
+		</div>
+	</div>
+</div>
+</div>
+<div id="container" >
+
+    
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+        
+<h1 id="site-name"><a href="#">Login</a></h1>
+
+        </div>
+        
+        
+    </div>
+    <!-- END Header -->
+    
+    
+
+    
+        
+    
+
+    <!-- Content -->
+    <div id="content" class="colM">
+        
+        
+        
+
+
+
+
+<div id="content-main">
+
+
+
+<form action='validate' method="post">
+  <input type="hidden" name="csrfmiddlewaretoken" value="jqagiw*i5xoe2kns1cezi)pb82iv_g6*juqbxbej*f3h7unv69">
+  {% csrf_token %}
+  <div class="form-row">
+    
+    <label class="required" for="id_username">Username:</label> 
+    <input type="text" name="uname" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username">
+  </div>
+  <div class="form-row">
+    
+    <label class="required" for="id_password">Password:</label> 
+    <input type="password" name="pswrd" autocomplete="current-password" required id="id_password">
+    
+  </div>
+  
+  
+  <div class="submit-row">
+    <label>&nbsp;</label><input type="submit" value="Log in">
+  </div>
+</form>
+
+{{result}}
+
+</div>
+
+        
+        <br class="clear">
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+
+<div class="fixed-footer">
+  <div class="container">Copyright &copy; under development</div>        
+</div>
+
+</body>
+</html>

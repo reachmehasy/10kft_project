@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>AppMod Report Login page</title>
+
+  <script>
+    $(document).ready(function(){
+        $(document).on('click','#send', function(){
+            $('#hid').val(data)
+            document.forms["myForm"].submit();
+        })
+    })
+  </script>
+
+  <style>
+  body {
+    color: #fceeee;
+    background-color: rgb(22, 75, 136);
+    font-family: Arial, sans-serif;
+    font-size:14px;
+    -moz-transition-property: text-shadow;
+    -moz-transition-duration: 4s;
+    -webkit-transition-property: text-shadow;
+    -webkit-transition-duration: 4s;
+    text-shadow: none;
+  }
+  body.blurry {
+    -moz-transition-property: text-shadow;
+    -moz-transition-duration: 4s;
+    -webkit-transition-property: text-shadow;
+    -webkit-transition-duration: 4s;
+    text-shadow: #fff 0px 0px 25px;
+  }
+  a {
+    color: #064b6d;
+  }
+
+  .lab {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #302c2c;
+  }
+  .textColumn, .linksColumn {
+    padding: 2em;
+  }
+  .textColumn {
+    position: absolute;
+    top: 0px;
+    right: 50%;
+    bottom: 0px;
+    left: 0px;
+
+    text-align: right;
+    padding-top: 11em;
+    background-color: rgb(27, 123, 168);
+    background-image: -moz-radial-gradient(left top, circle, rgb(106, 244, 249) 0%, rgb(0, 92, 179) 60%);
+    background-image: -webkit-gradient(radial, 0 0, 1, 0 0, 500, from(rgb(106, 249, 242)), to(rgb(0, 122, 179)));
+  }
+  .textColumn p {
+    width: 75%;
+    float:right;
+  }
+  .required {
+    color: #064b6d;
+  }
+  .errRes {
+    color: #b3060098; 
+    border-radius: 4px;
+  }
+  .linksColumn {
+    position: absolute;
+    top:0px;
+    right: 0px;
+    bottom: 0px;
+    left: 50%;
+
+    background-color: #E0E0E0;
+  }
+  .dwnld{
+    text-align: center;
+    background-color: rgb(151, 178, 209);
+  }
+
+  .frm2{
+    border-width: thin;
+  }
+  
+  h1 {
+    font-size: 430%;
+    font-weight: normal;
+    margin-bottom: 0em;
+    
+  }
+  h2 {
+    color: #302c2c;
+    font-size: 200%;
+    font-weight: normal;
+    margin-bottom: 0em;
+    top:30px;
+  }
+  ul {
+    padding-left: 1em;
+    margin: 0px;
+  }
+  li {
+    margin: 1em 0em;
+  }
+
+  </style>
+</head>
+<body id="sample">
+  <div class="textColumn">
+    <br><br><br><h1>App Mod Staffing portal</h1>
+  </div>
+  
+  <div class="linksColumn"> 
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <h2 >Login</h2>
+    <br>
+    <form action=validate  method="POST" class="frm1">
+      {% csrf_token %}
+
+      <label class="required" for="id_username">Username:</label>
+      <input type="text" name="uname" autofocus autocapitalize="none" autocomplete="username" maxlength="150" id="id_username">
+      &nbsp;&nbsp;
+      <label class="required" for="id_password">Password:</label>
+      <input type="password" name="pswrd" autocomplete="current-password" required id="id_password">
+      &nbsp;&nbsp;
+      <input type="submit" value="Log-in"/>
+      <br><br>
+     
+    </form>
+    <br> 
+    <div class="errRes"><h3>{{result}}</h3></div> 
+    {% if 'Welcome' in result %}
+        <div class="dwnld"> 
+          <form action="downloadExcel" method="POST">
+            {% csrf_token %}
+          <p class="lab">Please download the report.  
+            &nbsp;&nbsp;&nbsp;
+            <input type="submit" class="dwnldBtn" value="Get report" id="getRpt" onmousedown="this.style.backgroundColor='#e49976';return true;" onmouseup="this.style.backgroundColor='#fceeee';return true;"> 
+            <input type="button" class="logoutBtn" value="Logout" id="logout" ></p>
+          </form>
+          </div>
+      {% endif %}
+    
+  </div>
+</body>
+</html>
